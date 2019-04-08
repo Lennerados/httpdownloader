@@ -2,8 +2,8 @@
 
 Simple script to download and open a website.
 
-# Usage
+## Usage
 
 ```sh
-py downloader.py [your_url]"
+py downloader.py [your_url]
 ```
