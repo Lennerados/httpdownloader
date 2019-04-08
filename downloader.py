@@ -22,13 +22,12 @@ def start_request(url, filename):
 	file = open(filename, 'w')
 	file.write(r.text)
 	file.close()
+
 	webbrowser.open(filename, new = 2)
 	print("Downloaded page and waiting " + str(ttl) + "s until file gets removed")
 	time.sleep(ttl)
 	os.remove(filename)
 	print("File removed")
-	# wait for enter
-	# afterwards delete the file and end the program
 
 if __name__ == "__main__":
 	main()
