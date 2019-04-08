@@ -1,8 +1,10 @@
-#!/usr/bin/py
 import requests
 import sys
 import os
 import webbrowser
+import time
+
+ttl = 5
 
 def main():
 	if len(sys.argv) == 2:
@@ -21,7 +23,10 @@ def start_request(url, filename):
 	file.write(r.text)
 	file.close()
 	webbrowser.open(filename, new = 2)
-	#os.remove(filename)
+	print("Downloaded page and waiting " + str(ttl) + "s until file gets removed")
+	time.sleep(ttl)
+	os.remove(filename)
+	print("File removed")
 	# wait for enter
 	# afterwards delete the file and end the program
 
