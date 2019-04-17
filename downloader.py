@@ -1,8 +1,8 @@
 import requests
 import sys
-import os
 import webbrowser
 import time
+import codecs
 
 ttl = 5
 
@@ -19,7 +19,7 @@ def start_request(url, filename):
 	if r.status_code != 200:
 		print("Wrong HTTP status code: " + str(r.status_code))
 		return
-	file = open(filename, 'w')
+	file = codecs.open(filename, 'w', "utf-8")
 	file.write(r.text)
 	file.close()
 
